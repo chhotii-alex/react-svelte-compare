@@ -29,10 +29,17 @@ npm install
 npm run dev
 ```
 When you run `npm run dev` a running version of your project can be viewed at the URL it will show on-screen, such as
-`http://localhost:5173/'. The starting point of your project will be a page that says "Vite + React" or "Vite + Svelte"
+`http://localhost:5173/`. The starting point of your project will be a page that says "Vite + React" or "Vite + Svelte"
 (depending on which type of project you chose).
 
 It behooves you to put your project directory into some kind of source code control system _now_.
 
 You'll be editing the source code files in your project directory to add functionality.
+
+_Notes:_ 
+
+* Older documentation will say that the command to create a React app is `npx create-react-app my-app`. That is out
+of date. Now that Vite exists, `create-react-app` is deprecated.
+
+* [The Svelte documentation](https://kit.svelte.dev/docs/creating-a-project) will suggest the command `npm create svelte@latest my-app`. This would create a SvelteKit project, rather than just a Svelte project. SvelteKit is to Svelte as Next.js is to React (approximately). The scope of frameworks such as SvelteKit and Next.js is greater than just UI DOM rendering, which is what I'm focusing on here. You can create a framework project (such as SvelteKit or Next.js) to play with these things, but it will contain distracting other stuff that I'm ignoring for now.
 
