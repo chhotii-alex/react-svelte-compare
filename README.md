@@ -6,7 +6,7 @@ I'm not going to get into the internals (much), so, not much about the compiler 
 Nor am I going to get bogged down in editorializing. Just, "how do you do this?", so you can quickly switch between one and
 the other _and get stuff done_.
 
-## Starting a project, both React and Svelte
+## Starting a project
 
 For either library:
 * First, you must be well-grounded in HTML, CSS, and modern JavaScript.
@@ -43,3 +43,46 @@ of date. Now that Vite exists, `create-react-app` is deprecated.
 
 * [The Svelte documentation](https://kit.svelte.dev/docs/creating-a-project) will suggest the command `npm create svelte@latest my-app`. This would create a SvelteKit project, rather than just a Svelte project. SvelteKit is to Svelte as Next.js is to React (approximately). The scope of frameworks such as SvelteKit and Next.js is greater than just UI DOM rendering, which is what I'm focusing on here. You can create a framework project (such as SvelteKit or Next.js) to play with these things, but it will contain distracting other stuff that I'm ignoring for now.
 
+## What are Components, and Creating the Most Minimal Component
+
+Both a Svelte UI and a React UI are composed of components. Much of your time coding may be spent defining components. 
+Think of components as classes (in the OOP sense) that are specialized for creating specific subtrees in the DOM. (Are they
+actually classes? Is JavaScript actually an object-oriented programming language? Let's talk about that... at the pub...
+with beer in hand... later.) Just like with a class, you may have multiple instances of a component in play at once, and 
+each instance may have its own data (whether we call that attributes, properties, state, member variables... it's all data).
+
+Both Svelte and React assume that you know and love HTML and thus the most natural way to specify some piece of the DOM
+is to use HTML... or rather, something that looks a whole lot like HTML. Both use HTML-like syntax with some enhancements
+and minor modifications. 
+
+Whether you've created a React project or a Svelte project, the base project includes one starter component, named App.
+In either case, the code for App is in your `src/` folder. Let's strip out all but the most minimal content from App, and
+build up from there.
+
+In React, your App will be defined in `App.jsx`, whereas in Svelte, it will be `App.svelte`. Delete everything in this file and replace in entirety with the code below.
+
+In React, the new code is:
+```
+export default function App() {
+    return <h1>Hello, Web Programming!</h1>
+}
+```
+What, is that chocolate, I mean HTML in my JavaScript? JSX is an extension of JavaScript that lets you just burst into song,
+I mean, HTML (with some interesting additions and some slight restrictions).
+In Svelte, the new code is just:
+```
+<h1>Hello, Web Programming!</h1>
+```
+In a `.svelte` file, anything that is not inside a `<script></script>` or a <style></style> is treated as HTML (again,
+with some additions and little differences).
+
+Save the updated App file and the UI in your browser should instantly update to just the new content.
+
+## next
+
+Restrictions on HTML in JSX
+, such as:
+* You cannot use `class` as an attribute name: use `className` instead
+* You cannot use `for` as an attribute name: use `htmlFor` instead
+* If an HTML expression spans more than one line, it must be surrounded by parentheses
+* An HTML expression must consist of only one top-level node and its children
