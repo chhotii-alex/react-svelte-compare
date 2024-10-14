@@ -106,10 +106,45 @@ component. In the `src/` directory, create a new file, named either `SubItem.jsx
 whether you're using React or Svelte). Keeping things simple for now, the React code will be:
 ```
 export default function SubItem() {
-    return <h1>Fred's Important Other Stuff</h1>
+    return <p>Fred's Important Other Stuff</p>
 }
 ```
-Again, in Svelte, 
+Again, in Svelte, the .svelte file need only contain the HTML:
+```
+<p>Fred's Important Other Stuff</p>
+```
+
+In either framework, you need to import the child component into the parent component. In App.jsx, at the top, add:
+```
+import SubItem from './SubItem';
+```
+
+In Svelte the import has to go inside the `<script>` tag, and you must include the file extension in the path:
+```
+import SubItem from './SubItem.svelte';
+```
+
+In either framework, App can now refer to SubItem, with the syntax looking like SubItem is a new HTML tag. 
+(To avoid confusion, React _requires_ that component names start with a capital letter. Svelte may not _require_ this
+naming convention, but it's _very highly recommended_.)
+In Svelte, then, just this can go into App.svelte, at the bottom:
+```
+<SubItem />
+```
+
+In React, we run into some minor restrictions on the HTML expressions allowed in JSX:
+* If an HTML expression spans more than one line, it must be surrounded by parentheses
+* An HTML expression must consist of only one top-level node and its children
+```
+export default function App() {
+    return (
+        <div>
+            <h1>Hello, Web Programming!</h1>
+            <SubItem />
+        </div>
+    )
+}
+```
 
 
 ## next
@@ -122,5 +157,3 @@ Restrictions on HTML in JSX
 , such as:
 * You cannot use `class` as an attribute name: use `className` instead
 * You cannot use `for` as an attribute name: use `htmlFor` instead
-* If an HTML expression spans more than one line, it must be surrounded by parentheses
-* An HTML expression must consist of only one top-level node and its children
