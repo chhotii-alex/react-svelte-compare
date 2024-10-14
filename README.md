@@ -101,6 +101,8 @@ In either case, you can now _interpolate_ your variable into your HTML. Change `
 
 ## next
 
+## dynamic attributes
+
 Restrictions on HTML in JSX
 , such as:
 * You cannot use `class` as an attribute name: use `className` instead
