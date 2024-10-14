@@ -78,6 +78,27 @@ with some additions and little differences).
 
 Save the updated App file and the UI in your browser should instantly update to just the new content.
 
+## Variable Interpolation
+
+You're not here to just create static HTML content, so, let's have a variable. Edit your App component source code.
+
+In React, add
+```
+let name = 'Fred';
+```
+as the first line of your .jsx file. (Later on, we'll get into _state_ and _stores_ and such, and rethink where your data
+is set, but for now, let's just make there be a variable.)
+
+On the other hand, in Svelte, this needs to be inside a script tag. Recall that if it's not in a script tag, it's not 
+treated as JavaScript&mdash;you don't want this considered HTML. Thus, add this somewhere in your .svelte file:
+```
+<script>
+    let name = 'Fred';
+</script>
+```
+
+In either case, you can now _interpolate_ your variable into your HTML. Change `<h1>Hello, Web Programming!</h1>` to `<h1>Hello, {name}!</h1>` and as soon as you save the source file, you should see the greeting change to __Hello, Fred!__
+
 ## next
 
 Restrictions on HTML in JSX
