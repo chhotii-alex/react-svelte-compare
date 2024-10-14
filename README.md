@@ -99,9 +99,24 @@ treated as JavaScript&mdash;you don't want this considered HTML. Thus, add this 
 
 In either case, you can now _interpolate_ your variable into your HTML. Change `<h1>Hello, Web Programming!</h1>` to `<h1>Hello, {name}!</h1>` and as soon as you save the source file, you should see the greeting change to __Hello, Fred!__
 
+## Nested Components
+
+Components can use other components. Let's create a new component, to include in the UI created by our top-level 
+component. In the `src/` directory, create a new file, named either `SubItem.jsx` or `SubItem.svelte` (depending on 
+whether you're using React or Svelte). Keeping things simple for now, the React code will be:
+```
+export default function SubItem() {
+    return <h1>Fred's Important Other Stuff</h1>
+}
+```
+Again, in Svelte, 
+
+
 ## next
 
 ## dynamic attributes
+
+## styling
 
 Restrictions on HTML in JSX
 , such as:
