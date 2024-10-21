@@ -6,7 +6,12 @@ I'm not going to get into the internals (much), so, not much about the compiler 
 Nor am I going to get bogged down in editorializing. Just, "how do you do this?", so you can quickly switch between one and
 the other _and get stuff done_.
 
-## Starting a project
+## Contents
+
+* [Starting a Project](#starting-a-project)
+* [What are Components, and Creating the Most Minimal Component](#what-are-components-and-creating-the-most-minimal-component)
+
+## Starting a Project
 
 For either library:
 * First, you must be well-grounded in HTML, CSS, and modern JavaScript.
